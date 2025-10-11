@@ -1,0 +1,22 @@
+pandas
+numpy
+pyyaml
+scikit-learn
+psutil
+imbalanced-learn
+nltk
+torch
+tensorflow
+pyarrow
+openpyxl
+matplotlib
+requests
+seaborn
+ftfy
+langdetect
+joblib
+schedule
+transformers
+datasets
+# optional: setuptools (sometimes used in examples/scripts)
+setuptools

@@ -1,0 +1,19 @@
+Run-all started: Sat Oct 11 18:10:23 IST 2025
+---
+Script: ./model_deployment.py
+Running (non-interactive): ./model_deployment.py
+usage: model_deployment.py [-h] {package,serve,docker,test} ...
+
+Model deployment and serving utilities
+
+positional arguments:
+  {package,serve,docker,test}
+                        Available commands
+    package             Package model for deployment
+    serve               Start model API server
+    docker              Docker operations
+    test                Test model endpoint
+
+options:
+  -h, --help            show this help message and exit
+Run-all finished: Sat Oct 11 18:10:23 IST 2025

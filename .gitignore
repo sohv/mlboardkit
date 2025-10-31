@@ -2,3 +2,6 @@
 __pycache/
 data.json
 sql-text-pair.csv
+venv/
+.env
+__pycache__/

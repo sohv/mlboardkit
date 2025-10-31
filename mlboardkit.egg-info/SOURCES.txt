@@ -67,6 +67,9 @@ model_utils/training_setup.py
 safety_utils/__init__.py
 safety_utils/red_teaming_tools.py
 safety_utils/toxicity_filter.py
+tests/__init__.py
+tests/test_cli_help.py
+tests/test_imports.py
 text_processing/__init__.py
 text_processing/augment_text.py
 text_processing/clean_text.py

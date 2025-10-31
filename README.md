@@ -1,6 +1,18 @@
-# ML-Scripts
+# MLBoardKit
 
-Minimal setup and installation instructions. Detailed usage has moved to `usage.md`.
+<div align="center">
+  <img src="./logo.svg" width="120" alt="MLBoardKit Logo" />
+</div>
+
+A Python library that provides utilities for streamlined data processing, model training, and analysis tasks in machine learning workflows.
+
+**mlboardkit** offers easy CLI commands and Python interfaces for dataset quality checks, format conversion, metric computation, plot generation, and model training — with support for popular frameworks and minimal setup.
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![GitHub stars](https://img.shields.io/github/stars/adithya-s-k/mlboardkit?style=social)](https://github.com/sohv/mlboardkit)
+[![PyPI version](https://img.shields.io/pypi/v/mlboardkit.svg)](https://pypi.org/project/mlboardkit/)
+
+
 
 ## Install
 
@@ -17,9 +29,9 @@ pip install mlboardkit
 ```python
 # After installing mlboardkit, import via the mlboardkit namespace
 from mlboardkit.data_utils.dataset_processor import main as dataset_processor_main
-from mlboardkit.analysis_tools.metrics_utils import compute_classification_metrics
+from mlboardkit.analysis_tools.metrics_utils import classification_report
 
-compute_classification_metrics([1,0,1],[1,0,0])
+report = classification_report([1,0,1], [1,0,0])
 ```
 
 CLI via python -m:
@@ -32,5 +44,5 @@ python -m mlboardkit.model_utils.train_model --model-name bert-base-uncased --tr
 
 Python requirement: 3.9+
 
-Full usage and CLI examples are in `usage.md`.
+Full usage and CLI examples are in `usage.md`. Here is a [demo notebook](https://colab.research.google.com/drive/1Z7ltGDY89NFUT3Vyzl71nWls2y0DsjLb?usp=sharing) that demonstrates the usage of this library in a ML project.
 

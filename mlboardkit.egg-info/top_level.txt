@@ -10,6 +10,7 @@ misc
 mlboardkit
 model_utils
 safety_utils
+tests
 text_processing
 text_sql_tools
 visualization

@@ -16,6 +16,154 @@ The package installs the following subpackages and tools:
 - text_sql_tools: nl_to_sql, sql_to_nl
 - visualization: chart_generator, viz_utils
 
+### Subpackage usage
+
+Below are quick examples for each subpackage. Replace file names and arguments with your own.
+
+#### analysis_tools
+- Tools: compare_runs, experiment_tracker, feature_importance, metrics_utils, plot_metrics
+
+Imports:
+```python
+from mlboardkit.analysis_tools.metrics_utils import classification_report
+from mlboardkit.analysis_tools.plot_metrics import main as plot_metrics_cli
+
+classification_report([1,0,1],[1,0,0])
+```
+CLI:
+```bash
+python -m mlboardkit.analysis_tools.compare_runs --pattern "results/*.json" --output comparison.md --metric accuracy
+python -m mlboardkit.analysis_tools.plot_metrics training_log.json --plot-type training --output curves.png
+```
+
+#### automation
+- Tools: pipeline_runner, scheduler_job, task_scheduler, workflow_engine
+
+Imports:
+```python
+from mlboardkit.automation.pipeline_runner import main as pipeline_runner
+```
+CLI:
+```bash
+python -m mlboardkit.automation.pipeline_runner --config pipeline.json --output results.json
+python -m mlboardkit.automation.scheduler_job --status
+```
+
+#### data_analysis
+- Tools: data_profiler
+
+Imports:
+```python
+from mlboardkit.data_analysis.data_profiler import profile_dataset
+```
+CLI:
+```bash
+python -m mlboardkit.data_analysis.data_profiler data.csv --output profile.json
+```
+
+#### data_utils
+- Tools: csv_to_json, data_converter, data_label_inspector, data_sampler, dataset_processor, deduplicate, remove_duplicates, split_data
+
+Imports:
+```python
+from mlboardkit.data_utils.dataset_processor import main as dataset_processor
+from mlboardkit.data_utils.data_converter import convert_file
+```
+CLI:
+```bash
+python -m mlboardkit.data_utils.dataset_processor quality-check data.csv --report report.json
+python -m mlboardkit.data_utils.data_converter convert input.json output.csv --format csv
+python -m mlboardkit.data_utils.split_data data.json --train-ratio 0.8 --val-ratio 0.1
+```
+
+#### file_conversion
+- Tools: format_json, json_to_csv, jsonl_splitter, merge_json_files, txt_to_jsonl
+
+Imports:
+```python
+from mlboardkit.file_conversion.format_json import format_json_file
+```
+CLI:
+```bash
+python -m mlboardkit.file_conversion.format_json data.json
+python -m mlboardkit.file_conversion.merge_json_files "data/*.json" merged.jsonl --format jsonl
+```
+
+#### file_management
+- Tools: compress_folder, project_organizer, smart_organizer
+
+CLI:
+```bash
+python -m mlboardkit.file_management.compress_folder my_project --format zip --exclude .git __pycache__
+```
+
+#### llm_experiments
+- Tools: adversarial_prompting, alignment_metrics, jailbreak_tester, prompt_eval, response_consistency
+
+CLI:
+```bash
+python -m mlboardkit.llm_experiments.jailbreak_tester --categories violence illegal_activities --simulate
+python -m mlboardkit.llm_experiments.prompt_eval --prompts prompts.json --responses responses.json --output evaluation.md
+```
+
+#### misc
+- Tools: cli_parser, config_manager, db_utilities, env_report, git_ml_workflow, logger_utils, timer
+
+CLI:
+```bash
+python -m mlboardkit.misc.config_manager create --template finetuning --output config.yaml
+python -m mlboardkit.misc.env_report --output env_report.json
+python -m mlboardkit.misc.timer --demo
+```
+
+#### model_utils
+- Tools: embedding_utils, evaluate_model, hp_search, model_card_generator, model_compression, model_convert, model_validator, reproducibility, seed_everything, train_model, training_setup
+
+Imports:
+```python
+from mlboardkit.model_utils.evaluate_model import main as eval_cli
+```
+CLI:
+```bash
+python -m mlboardkit.model_utils.training_setup check --gpu-only
+python -m mlboardkit.model_utils.train_model --model-name bert-base-uncased --train-file train.jsonl --epochs 3
+python -m mlboardkit.model_utils.evaluate_model predictions.json --task classification
+python -m mlboardkit.model_utils.model_card_generator --config model_config.json --metrics results.json --output MODEL_CARD.md
+```
+
+#### safety_utils
+- Tools: red_teaming_tools, toxicity_filter
+
+CLI:
+```bash
+python -m mlboardkit.safety_utils.toxicity_filter input.jsonl --output clean.jsonl
+```
+
+#### text_processing
+- Tools: augment_text, clean_text, text_analyzer, text_utilities
+
+CLI:
+```bash
+python -m mlboardkit.text_processing.clean_text input.txt --stats
+python -m mlboardkit.text_processing.augment_text --input texts.json --output augmented.json --techniques synonym insertion --multiplier 3
+```
+
+#### text_sql_tools
+- Tools: nl_to_sql, sql_to_nl
+
+CLI:
+```bash
+python -m mlboardkit.text_sql_tools.nl_to_sql --query "top 10 users by spend"
+```
+
+#### visualization
+- Tools: chart_generator, viz_utils
+
+CLI:
+```bash
+python -m mlboardkit.visualization.chart_generator --input data.json --chart bar --output chart.png
+```
+
 ## How to use
 
 Install:
@@ -35,25 +183,37 @@ compute_classification_metrics([1,0,1],[1,0,0])
 
 Use as CLI modules:
 ```bash
-python -m data_utils.dataset_processor quality-check dataset.csv --report report.json
-python -m data_utils.data_converter convert input.json output.csv --format csv
-python -m analysis_tools.plot_metrics training_log.json --plot-type training --output curves.png
-python -m file_conversion.format_json data.json
-python -m file_management.compress_folder my_project --format zip
-python -m model_utils.train_model --model-name bert-base-uncased --train-file train.jsonl --epochs 3
-python -m model_utils.evaluate_model predictions.json --task classification
-python -m model_utils.training_setup check --gpu-only
-python -m llm_experiments.jailbreak_tester --categories violence illegal_activities --simulate
-python -m automation.pipeline_runner --config pipeline.json --output results.json
-python -m text_processing.clean_text input.txt --stats
-python -m text_sql_tools.nl_to_sql --query "top 10 users by spend"
-python -m visualization.chart_generator --input data.json --chart bar --output chart.png
+python -m mlboardkit.data_utils.dataset_processor quality-check dataset.csv --report report.json
+python -m mlboardkit.data_utils.data_converter convert input.json output.csv --format csv
+python -m mlboardkit.analysis_tools.plot_metrics training_log.json --plot-type training --output curves.png
+python -m mlboardkit.file_conversion.format_json data.json
+python -m mlboardkit.file_management.compress_folder my_project --format zip
+python -m mlboardkit.model_utils.train_model --model-name bert-base-uncased --train-file train.jsonl --epochs 3
+python -m mlboardkit.model_utils.evaluate_model predictions.json --task classification
+python -m mlboardkit.model_utils.training_setup check --gpu-only
+python -m mlboardkit.llm_experiments.jailbreak_tester --categories violence illegal_activities --simulate
+python -m mlboardkit.automation.pipeline_runner --config pipeline.json --output results.json
+python -m mlboardkit.text_processing.clean_text input.txt --stats
+python -m mlboardkit.text_sql_tools.nl_to_sql --query "top 10 users by spend"
+python -m mlboardkit.visualization.chart_generator --input data.json --chart bar --output chart.png
 ```
 
 Discover flags:
 ```bash
 python -m data_utils.dataset_processor --help
 ```
+
+## Testing the package locally
+
+Run the smoke tests with pytest:
+```bash
+uv add --dev pytest
+uv run pytest -q
+```
+
+What the tests cover:
+- Importing the `mlboardkit` namespace and all subpackages
+- Running `--help` on common CLIs via `python -m mlboardkit.<subpackage>.<tool>`
 
 ## Available Scripts
 

@@ -58,9 +58,9 @@ pip install mlboardkit
 ```python
 # After installing mlboardkit, import via the mlboardkit namespace
 from mlboardkit.data_utils.dataset_processor import main as dataset_processor_main
-from mlboardkit.analysis_tools.metrics_utils import compute_classification_metrics
+from mlboardkit.analysis_tools.metrics_utils import classification_report
 
-compute_classification_metrics([1,0,1],[1,0,0])
+report = classification_report([1,0,1], [1,0,0])
 ```
 
 CLI via python -m:

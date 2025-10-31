@@ -1,7 +1,7 @@
 # MLBoardKit
 
 <div align="center">
-  <img src="./logo.svg" width="120" alt="MLBoardKit Logo" />
+  <img src="/Users/sohan/Documents/GitHub/scripts/logo.svg" width="120" alt="MLBoardKit Logo" />
 </div>
 
 A Python library that provides utilities for streamlined data processing, model training, and analysis tasks in machine learning workflows.
@@ -9,7 +9,7 @@ A Python library that provides utilities for streamlined data processing, model 
 **mlboardkit** offers easy CLI commands and Python interfaces for dataset quality checks, format conversion, metric computation, plot generation, and model training — with support for popular frameworks and minimal setup.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub stars](https://img.shields.io/github/stars/adithya-s-k/mlboardkit?style=social)](https://github.com/sohv/mlboardkit)
+[![GitHub stars](https://img.shields.io/github/stars/sohv/mlboardkit?style=social)](https://github.com/sohv/mlboardkit/stargazers)
 [![PyPI version](https://img.shields.io/pypi/v/mlboardkit.svg)](https://pypi.org/project/mlboardkit/)
 
 

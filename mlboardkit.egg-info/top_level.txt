@@ -7,6 +7,7 @@ file_conversion
 file_management
 llm_experiments
 misc
+mlboardkit
 model_utils
 safety_utils
 text_processing

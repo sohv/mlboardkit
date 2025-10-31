@@ -46,6 +46,7 @@ misc/env_report.py
 misc/git_ml_workflow.py
 misc/logger_utils.py
 misc/timer.py
+mlboardkit/__init__.py
 mlboardkit.egg-info/PKG-INFO
 mlboardkit.egg-info/SOURCES.txt
 mlboardkit.egg-info/dependency_links.txt

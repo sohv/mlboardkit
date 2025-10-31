@@ -1,7 +1,7 @@
 # MLBoardKit
 
 <div align="center">
-  <img src="/Users/sohan/Documents/GitHub/scripts/logo.svg" width="120" alt="MLBoardKit Logo" />
+  <img src="./logo.svg" width="120" alt="MLBoardKit Logo" />
 </div>
 
 A Python library that provides utilities for streamlined data processing, model training, and analysis tasks in machine learning workflows.

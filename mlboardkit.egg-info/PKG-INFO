@@ -1,0 +1,66 @@
+Metadata-Version: 2.4
+Name: mlboardkit
+Version: 0.1.0
+Summary: Utilities for data processing, model training, and analysis.
+Author-email: Sohan <soh.venkatesh@gmail.com>
+License: Apache-2.0
+Project-URL: Homepage, https://github.com/sohv/scripts
+Project-URL: Issues, https://github.com/sohv/scripts/issues
+Keywords: machine-learning,data,nlp,ml,utilities,toolkit
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Requires-Dist: pandas
+Requires-Dist: numpy
+Requires-Dist: pyyaml
+Requires-Dist: scikit-learn
+Requires-Dist: psutil
+Requires-Dist: imbalanced-learn
+Requires-Dist: nltk
+Requires-Dist: torch
+Requires-Dist: tensorflow
+Requires-Dist: pyarrow
+Requires-Dist: openpyxl
+Requires-Dist: matplotlib
+Requires-Dist: requests
+Requires-Dist: seaborn
+Requires-Dist: ftfy
+Requires-Dist: langdetect
+Requires-Dist: joblib
+Requires-Dist: schedule
+Requires-Dist: transformers
+Requires-Dist: datasets
+Requires-Dist: build>=1.3.0
+Requires-Dist: twine>=6.2.0
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: ruff; extra == "dev"
+Requires-Dist: mypy; extra == "dev"
+
+# ML-Scripts
+
+Minimal setup and installation instructions. Detailed usage has moved to `usage.md`.
+
+## Install
+
+```bash
+# from source (editable)
+pip install -e .
+
+# or after publishing to PyPI
+pip install ml-scripts
+```
+
+## Quick start
+
+```python
+from data_utils.dataset_processor import main as dataset_processor_main
+from analysis_tools.metrics_utils import compute_classification_metrics
+```
+
+Python requirement: 3.9+
+
+Full usage and CLI examples are in `usage.md`.
+

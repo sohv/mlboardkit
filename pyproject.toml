@@ -1,0 +1,61 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mlboardkit"
+version = "0.1.0"
+description = "Utilities for data processing, model training, and analysis."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "Apache-2.0" }
+authors = [
+  { name = "Sohan", email = "soh.venkatesh@gmail.com" }
+]
+keywords = ["machine-learning", "data", "nlp", "ml", "utilities", "toolkit"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: Apache Software License",
+  "Operating System :: OS Independent",
+]
+dependencies = [
+  "pandas",
+  "numpy",
+  "pyyaml",
+  "scikit-learn",
+  "psutil",
+  "imbalanced-learn",
+  "nltk",
+  "torch",
+  "tensorflow",
+  "pyarrow",
+  "openpyxl",
+  "matplotlib",
+  "requests",
+  "seaborn",
+  "ftfy",
+  "langdetect",
+  "joblib",
+  "schedule",
+  "transformers",
+  "datasets",
+  "build>=1.3.0",
+  "twine>=6.2.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/sohv/scripts"
+Issues = "https://github.com/sohv/scripts/issues"
+
+[project.optional-dependencies]
+dev = ["pytest", "ruff", "mypy"]
+
+[tool.setuptools]
+packages = { find = {} }
+
+[dependency-groups]
+dev = [
+    "build>=1.3.0",
+]
+
+
